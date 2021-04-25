@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>COVID19 Resources</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="form.css" >
+		<script>
+		
+		function myFunction(){
+		 var str1 = document.getElementById("name").value;
+		 var str2 = document.getElementById("email").value;
+		 var intstr1 = str1.replace(/\s/g, '%20OR%20');
+		 var str1cleaned = '('.concat(intstr1,')')
+		 var str2cleaned = '%20'.concat(str2);
+		 var startURL = 'https://twitter.com/search?lang=en&q=';
+		 var endURL = '%20verified%20-needed%20-need%20-required%20-require%20-want%20-wanted&src=typed_query'
+		 var flink = startURL.concat(str1cleaned,str2cleaned,endURL);
+		 window.open(flink);
+		
+		}
+
+		</script>
+    </head>
+    <body >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>COVID-19 Resources</h2>
+					<p>Search for resources on Twitter.</p>
+                    <p> 1. Enter what you're looking for. For instance: oxygen, ventilator, fabiflu etc. You can enter multiple resources seprated by spaces like: oxygen fabiflu.</p>
+					<p> 2. Then enter the city where you need these rescources.</p>
+					<p> Click search and the page will redirect you to Twitter advacned search page and gathers all the tweets mentioned by others </p>
+                    <form role="form" method="post" id="reused_form" >
+                        <div class="form-group">
+                            <label for="name"> Looking for:</label>
+                            <input type="text" class="form-control" id="name" name="name" required maxlength="50" placeholder="oxygen ventilator">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"> City:</label>
+                            <input type="email" class="form-control" id="email" name="email" required maxlength="50" placeholder="Delhi">
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-success pull-right" id="btnContactUs" onclick="myFunction()">Search &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
